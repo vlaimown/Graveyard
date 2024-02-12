@@ -19,4 +19,9 @@ public class Enemy : Character
     {
         _agent.destination = _target.position;
     }
+
+    protected override void GetDamage(float damage)
+    {
+        base.GetDamage(damage);
+    }
 }
