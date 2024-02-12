@@ -7,6 +7,7 @@ public class Enemy : Character
 
     protected override void Start()
     {
+        base.Start();
         _agent = GetComponent<NavMeshAgent>();
     }
 
@@ -20,7 +21,7 @@ public class Enemy : Character
         _agent.destination = _target.position;
     }
 
-    protected override void GetDamage(float damage)
+    public override void GetDamage(float damage)
     {
         base.GetDamage(damage);
     }

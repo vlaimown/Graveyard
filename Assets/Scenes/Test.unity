@@ -362,6 +362,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6527062938394144125, guid: 138eb1d818e4d1e4eb34cc21e58d3384, type: 3}
+      propertyPath: _attackDistance
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6527062938394144125, guid: 138eb1d818e4d1e4eb34cc21e58d3384, type: 3}
+      propertyPath: layerMask.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 8322570550715125665, guid: 138eb1d818e4d1e4eb34cc21e58d3384, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -411,7 +419,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 138eb1d818e4d1e4eb34cc21e58d3384, type: 3}
---- !u!1001 &1428073225865923042
+--- !u!1001 &5211966831650740548
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -419,49 +427,49 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5248007525044521192, guid: f4242a460accdef4b88b5f234b113d8e, type: 3}
+    - target: {fileID: 3250184427413160873, guid: f4242a460accdef4b88b5f234b113d8e, type: 3}
+      propertyPath: m_Name
+      value: Zombie
+      objectReference: {fileID: 0}
+    - target: {fileID: 6291513007142445355, guid: f4242a460accdef4b88b5f234b113d8e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.63
       objectReference: {fileID: 0}
-    - target: {fileID: 5248007525044521192, guid: f4242a460accdef4b88b5f234b113d8e, type: 3}
+    - target: {fileID: 6291513007142445355, guid: f4242a460accdef4b88b5f234b113d8e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.7
+      value: 3.06
       objectReference: {fileID: 0}
-    - target: {fileID: 5248007525044521192, guid: f4242a460accdef4b88b5f234b113d8e, type: 3}
+    - target: {fileID: 6291513007142445355, guid: f4242a460accdef4b88b5f234b113d8e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 28.2
+      value: 10.017237
       objectReference: {fileID: 0}
-    - target: {fileID: 5248007525044521192, guid: f4242a460accdef4b88b5f234b113d8e, type: 3}
+    - target: {fileID: 6291513007142445355, guid: f4242a460accdef4b88b5f234b113d8e, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5248007525044521192, guid: f4242a460accdef4b88b5f234b113d8e, type: 3}
+    - target: {fileID: 6291513007142445355, guid: f4242a460accdef4b88b5f234b113d8e, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5248007525044521192, guid: f4242a460accdef4b88b5f234b113d8e, type: 3}
+    - target: {fileID: 6291513007142445355, guid: f4242a460accdef4b88b5f234b113d8e, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5248007525044521192, guid: f4242a460accdef4b88b5f234b113d8e, type: 3}
+    - target: {fileID: 6291513007142445355, guid: f4242a460accdef4b88b5f234b113d8e, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5248007525044521192, guid: f4242a460accdef4b88b5f234b113d8e, type: 3}
+    - target: {fileID: 6291513007142445355, guid: f4242a460accdef4b88b5f234b113d8e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5248007525044521192, guid: f4242a460accdef4b88b5f234b113d8e, type: 3}
+    - target: {fileID: 6291513007142445355, guid: f4242a460accdef4b88b5f234b113d8e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5248007525044521192, guid: f4242a460accdef4b88b5f234b113d8e, type: 3}
+    - target: {fileID: 6291513007142445355, guid: f4242a460accdef4b88b5f234b113d8e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8229538931265433890, guid: f4242a460accdef4b88b5f234b113d8e, type: 3}
-      propertyPath: m_Name
-      value: Zombie
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -475,4 +483,4 @@ SceneRoots:
   - {fileID: 493738792}
   - {fileID: 1666544559}
   - {fileID: 1746142539}
-  - {fileID: 1428073225865923042}
+  - {fileID: 5211966831650740548}

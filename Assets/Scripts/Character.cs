@@ -17,8 +17,18 @@ public class Character : MonoBehaviour
     protected virtual void Move() { }
     protected virtual void Attack() { }
 
-    protected virtual void GetDamage(float damage)
+    public virtual void GetDamage(float damage)
     {
-        _currentHealth -= damage;
+        if (_currentHealth - damage <= 0f)
+            Death();
+        else
+            _currentHealth -= damage;
+
+        Debug.Log(_currentHealth);
+    }
+
+    public virtual void Death()
+    {
+        Destroy(gameObject);
     }
 }
