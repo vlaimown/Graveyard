@@ -694,4 +694,5 @@ MonoBehaviour:
   _health: 0
   _speed: 0
   _attackForce: 0
-  enableAttack: 1
+  _enableAttack: 1
+  _attackDistance: 5

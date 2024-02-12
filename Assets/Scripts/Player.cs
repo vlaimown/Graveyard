@@ -2,11 +2,13 @@ using UnityEngine;
 
 public class Player : Character
 {
-    public bool enableAttack = false;
+    [SerializeField] private bool _enableAttack = false;
+
+    [SerializeField, Min(5f)] private float _attackDistance = 1.0f;
 
     protected override void Update()
     {
-        if (enableAttack && Input.GetButtonDown("Attack"))
+        if (_enableAttack && Input.GetButtonDown("Attack"))
         {
             Attack();
         }
@@ -15,5 +17,15 @@ public class Player : Character
     protected override void Attack()
     {
         Debug.Log("Attack");
+
+        Ray ray = new Ray(transform.position, Vector3.forward);
+        RaycastHit hit;
+
+        Debug.DrawRay(transform.position, Vector3.forward * _attackDistance, Color.red, 100000);
+
+        if (Physics.Raycast(ray, out hit, _attackDistance))
+        {
+            Debug.Log(hit.transform.gameObject);
+        }
     }
 }
