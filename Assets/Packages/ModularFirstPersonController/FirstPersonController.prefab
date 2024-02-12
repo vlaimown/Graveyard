@@ -499,6 +499,7 @@ GameObject:
   - component: {fileID: 2530152617494460046}
   - component: {fileID: 5912847537367304990}
   - component: {fileID: 4019975978549608171}
+  - component: {fileID: 6527062938394144125}
   m_Layer: 0
   m_Name: FirstPersonController
   m_TagString: Player
@@ -678,3 +679,19 @@ MonoBehaviour:
   joint: {fileID: 3518879643476908211}
   bobSpeed: 10
   bobAmount: {x: 0, y: 0.1, z: 0}
+--- !u!114 &6527062938394144125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9104507544563918498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10c890220dbc1ce42909710b3fbbe0cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 0
+  _speed: 0
+  _attackForce: 0
+  enableAttack: 1

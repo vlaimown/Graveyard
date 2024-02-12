@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    [SerializeField] protected float _health;
-    [SerializeField] protected float _speed;
-    [SerializeField] protected float _attackForce;
+    [SerializeField, Min(25f)] protected float _health;
+    [SerializeField, Min(1f)] protected float _speed;
+    [SerializeField, Min(1f)] protected float _attackForce;
     protected virtual void Start()
     {
         

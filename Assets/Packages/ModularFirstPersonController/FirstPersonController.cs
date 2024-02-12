@@ -116,6 +116,11 @@ public class FirstPersonController : MonoBehaviour
     private Vector3 originalScale;
 
     #endregion
+
+    #endregion
+
+    #region Attack
+
     #endregion
 
     #region Head Bob
@@ -326,10 +331,15 @@ public class FirstPersonController : MonoBehaviour
         #region Jump
 
         // Gets input and calls jump method
-        if(enableJump && Input.GetKeyDown(jumpKey) && isGrounded)
+        if (enableJump && Input.GetKeyDown(jumpKey) && isGrounded)
         {
             Jump();
         }
+
+        #endregion
+
+        #region Attack
+
 
         #endregion
 
@@ -526,9 +536,12 @@ public class FirstPersonController : MonoBehaviour
             joint.localPosition = new Vector3(Mathf.Lerp(joint.localPosition.x, jointOriginalPos.x, Time.deltaTime * bobSpeed), Mathf.Lerp(joint.localPosition.y, jointOriginalPos.y, Time.deltaTime * bobSpeed), Mathf.Lerp(joint.localPosition.z, jointOriginalPos.z, Time.deltaTime * bobSpeed));
         }
     }
+
+    //private void Attack()
+    //{
+    //    Debug.Log("Attack");
+    //}
 }
-
-
 
 // Custom Editor
 #if UNITY_EDITOR
