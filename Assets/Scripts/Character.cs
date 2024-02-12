@@ -5,14 +5,14 @@ public class Character : MonoBehaviour
     [SerializeField] protected float _health;
     [SerializeField] protected float _speed;
     [SerializeField] protected float _attackForce;
-    void Start()
+    protected virtual void Start()
     {
         
     }
 
-    void Update()
+    protected virtual void Update()
     {
-        
+
     }
 
     protected virtual void Move() { }

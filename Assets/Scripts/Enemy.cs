@@ -1,18 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
-public class Enemy : MonoBehaviour
+using UnityEngine.AI;
+public class Enemy : Character
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] protected NavMeshAgent _agent;
+    [SerializeField] protected Transform _target;
+
+    protected override void Start()
     {
-        
+        _agent = GetComponent<NavMeshAgent>();
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
-        
+        Move();
+    }
+
+    protected override void Move()
+    {
+        _agent.destination = _target.position;
     }
 }
