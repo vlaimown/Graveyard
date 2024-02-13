@@ -332,6 +332,7 @@ MonoBehaviour:
   _blockStaminaImg: {fileID: 1126010294119586857}
   _blockFullSprite: {fileID: 21300000, guid: 9622af4809531ed4ea4051a127c112cd, type: 3}
   _blockBrokenSprite: {fileID: 21300000, guid: 9053d952ea74e4c44ac0bf547035ef9f, type: 3}
+  _throwItem: {fileID: 4943235204983079510, guid: 40b7353f23b188e41bafe85fd8abcef1, type: 3}
 --- !u!95 &729638769235975580
 Animator:
   serializedVersion: 5

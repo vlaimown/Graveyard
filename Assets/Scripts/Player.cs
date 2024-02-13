@@ -30,6 +30,8 @@ public class Player : Character
     private bool _blockBroken;
     #endregion
 
+    [SerializeField] private GameObject _throwItem;
+
     protected override void Start()
     {
         base.Start();
@@ -65,6 +67,11 @@ public class Player : Character
         if (_enableBlock && !_isBlocking)
         {
             RecoverBlock();
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Instantiate(_throwItem, transform.position, Quaternion.identity);
         }
 
         float sprintRemainingPercent = _currentBlockStamina / _maxBlockStamina;
@@ -118,7 +125,7 @@ public class Player : Character
             _blockStaminaImg.sprite = _blockBrokenSprite;
         }
 
-        Debug.Log($"block : {_currentBlockStamina}");
+        //Debug.Log($"block : {_currentBlockStamina}");
     }
 
     private void RecoverBlock()
@@ -138,6 +145,6 @@ public class Player : Character
             }
         }
 
-        Debug.Log($"recover block : {_currentBlockStamina}");
+        //Debug.Log($"recover block : {_currentBlockStamina}");
     }
 }
