@@ -28,8 +28,6 @@ public class Character : MonoBehaviour
             Death();
         else
             _currentHealth -= damage;
-
-        Debug.Log(_currentHealth);
     }
 
     public virtual void Death()
