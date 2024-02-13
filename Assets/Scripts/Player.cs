@@ -8,6 +8,8 @@ public class Player : Character
     [SerializeField] private bool _enableAttack = false;
     [SerializeField, Min(3f)] private float _attackDistance = 1.0f;
     [SerializeField] private LayerMask _attackLayerMask;
+
+    private bool _isAttacking = false;
     #endregion
 
     #region Block
@@ -42,18 +44,25 @@ public class Player : Character
             _animator.SetTrigger("Attacking");
         }
 
-        if (_enableBlock && Input.GetButton("Block") && !_blockBroken)
+        if (_enableBlock && Input.GetButtonDown("Block") && !_blockBroken && !_isAttacking)
+        {
+            _animator.SetBool("Blocking", true);
+        }
+
+        if (_enableBlock && Input.GetButton("Block") && !_blockBroken && !_isAttacking)
         {
             Block();
         }
 
-        if (Input.GetButtonUp("Block"))
+        if (Input.GetButtonUp("Block") || _blockBroken)
         {
             _isBlocking = false;
             _dontHit = false;
+
+            _animator.SetBool("Blocking", false);
         }
 
-        else if (_enableBlock && !_isBlocking)
+        if (_enableBlock && !_isBlocking)
         {
             RecoverBlock();
         }
@@ -64,6 +73,8 @@ public class Player : Character
 
     protected override void Attack()
     {
+        _isAttacking = true;
+
         Vector3 Ray_start_position = new Vector3(Screen.width / 2, Screen.height / 2, 0);
 
         Ray ray = Camera.main.ScreenPointToRay(Ray_start_position);
@@ -75,6 +86,8 @@ public class Player : Character
         {
             hit.transform.GetComponent<Enemy>().GetDamage(_attackForce);
         }
+
+        _isAttacking = false;
     }
 
     public override void GetDamage(float damage)
