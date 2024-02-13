@@ -1,17 +1,54 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : Character
 {
+    #region Attack
     [SerializeField] private bool _enableAttack = false;
-
     [SerializeField, Min(5f)] private float _attackDistance = 1.0f;
-
     [SerializeField] private LayerMask _attackLayerMask;
+    #endregion
+
+    #region Block
+    [SerializeField] private bool _enableBlock;
+    [SerializeField, Min(1f)] private float _maxBlockStamina;
+
+    [SerializeField, Min(0.1f)] private float _blockTime;
+    [SerializeField, Min(0.1f)] private float _cooldownBlockSpeed;
+    
+    private float _currentBlockStamina;
+
+    private bool _isBlocking;
+    private bool _blockBroken;
+    #endregion
+
+    protected override void Start()
+    {
+        base.Start();
+
+        _currentBlockStamina = _maxBlockStamina;
+    }
+
     protected override void Update()
     {
         if (_enableAttack && Input.GetButtonDown("Attack"))
         {
             Attack();
+        }
+
+        if (_enableBlock && Input.GetButton("Block") && !_blockBroken)
+        {
+            Block();
+        }
+
+        if (Input.GetButtonUp("Block"))
+        {
+            _isBlocking = false;
+        }
+
+        else if (_enableBlock && !_isBlocking)
+        {
+            RecoverBlock();
         }
     }
 
@@ -34,6 +71,51 @@ public class Player : Character
     {
         base.GetDamage(damage);
 
-        _healthBar.fillAmount = _currentHealth / _maxHealth;
+        if (!_dontHit)
+        {
+            _healthBar.fillAmount = _currentHealth / _maxHealth;
+        }
+
+        if (_isBlocking)
+        {
+            _currentBlockStamina -= damage;
+        }
+    }
+
+    private void Block()
+    {
+        if (_currentBlockStamina > 0f)
+        {
+            _isBlocking = true;
+            _dontHit = true;
+            _currentBlockStamina -= Time.deltaTime * _blockTime;
+        }
+        else
+        {
+            _isBlocking = false;
+            _blockBroken = true;
+            _currentBlockStamina = 0f;
+        }
+
+        Debug.Log($"block : {_currentBlockStamina}");
+    }
+
+    private void RecoverBlock()
+    {
+        if (_currentBlockStamina < _maxBlockStamina)
+        {
+            _currentBlockStamina += Time.deltaTime * _cooldownBlockSpeed;
+        }
+        else
+        {
+            _currentBlockStamina = _maxBlockStamina;
+
+            if (_blockBroken)
+            {
+                _blockBroken = false;
+            }
+        }
+
+        Debug.Log($"recover block : {_currentBlockStamina}");
     }
 }

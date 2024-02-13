@@ -8,6 +8,8 @@ public class Character : MonoBehaviour
 
     [SerializeField] protected Image _healthBar;
 
+    [SerializeField] protected bool _dontHit;
+
     protected Animator _animator;
 
     protected float _currentHealth;
@@ -24,10 +26,17 @@ public class Character : MonoBehaviour
 
     public virtual void GetDamage(float damage)
     {
-        if (_currentHealth - damage <= 0f)
-            Death();
-        else
-            _currentHealth -= damage;
+        if (!_dontHit)
+        {
+            if (_currentHealth - damage <= 0f)
+            {
+                Death();
+            }
+            else
+            {
+                _currentHealth -= damage;
+            }
+        }
     }
 
     public virtual void Death()

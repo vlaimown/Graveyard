@@ -1153,7 +1153,7 @@ MonoBehaviour:
   crosshair: 1
   crosshairImage: {fileID: 21300000, guid: be4ce60e2c9768c44b9b10b9c5258045, type: 3}
   crosshairColor: {r: 1, g: 1, b: 1, a: 1}
-  enableZoom: 1
+  enableZoom: 0
   holdToZoom: 1
   zoomKey: 324
   zoomFOV: 30
@@ -1400,11 +1400,16 @@ MonoBehaviour:
   _speed: 1
   _attackForce: 25
   _healthBar: {fileID: 1178623545}
+  _dontHit: 0
   _enableAttack: 1
   _attackDistance: 10
   _attackLayerMask:
     serializedVersion: 2
     m_Bits: 64
+  _enableBlock: 1
+  _maxBlockStamina: 3
+  _blockTime: 0.1
+  _cooldownBlockSpeed: 0.1
 --- !u!114 &6763974686866780734
 MonoBehaviour:
   m_ObjectHideFlags: 0
