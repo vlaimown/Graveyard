@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : Character
 {
@@ -15,6 +16,11 @@ public class Player : Character
 
     [SerializeField, Min(0.1f)] private float _blockTime;
     [SerializeField, Min(0.1f)] private float _cooldownBlockSpeed;
+
+    [SerializeField] private Image _blockStaminaImg;
+
+    [SerializeField] private Sprite _blockFullSprite;
+    [SerializeField] private Sprite _blockBrokenSprite;
     
     private float _currentBlockStamina;
 
@@ -44,12 +50,16 @@ public class Player : Character
         if (Input.GetButtonUp("Block"))
         {
             _isBlocking = false;
+            _dontHit = false;
         }
 
         else if (_enableBlock && !_isBlocking)
         {
             RecoverBlock();
         }
+
+        float sprintRemainingPercent = _currentBlockStamina / _maxBlockStamina;
+        _blockStaminaImg.transform.localScale = new Vector3(sprintRemainingPercent, 1f, 1f);
     }
 
     protected override void Attack()
@@ -94,7 +104,10 @@ public class Player : Character
         {
             _isBlocking = false;
             _blockBroken = true;
+            _dontHit = false;
             _currentBlockStamina = 0f;
+
+            _blockStaminaImg.sprite = _blockBrokenSprite;
         }
 
         Debug.Log($"block : {_currentBlockStamina}");
@@ -113,6 +126,7 @@ public class Player : Character
             if (_blockBroken)
             {
                 _blockBroken = false;
+                _blockStaminaImg.sprite = _blockFullSprite;
             }
         }
 
