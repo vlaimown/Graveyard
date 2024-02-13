@@ -500,7 +500,7 @@ GameObject:
   - component: {fileID: 5912847537367304990}
   - component: {fileID: 4019975978549608171}
   - component: {fileID: 6527062938394144125}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FirstPersonController
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -693,7 +693,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 25
   _speed: 1
-  _attackForce: 1
+  _attackForce: 25
+  _animator: {fileID: 0}
   _enableAttack: 1
   _attackDistance: 100
   _attackLayerMask:

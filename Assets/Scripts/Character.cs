@@ -7,9 +7,12 @@ public class Character : MonoBehaviour
     [SerializeField, Min(1f)] protected float _attackForce;
 
     protected float _currentHealth;
+
+    [SerializeField] protected Animator _animator;
     protected virtual void Start()
     {
         _currentHealth = _maxHealth;
+        _animator = GetComponent<Animator>();
     }
 
     protected virtual void Update() { }
