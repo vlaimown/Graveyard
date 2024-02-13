@@ -94,11 +94,6 @@ public class Player : Character
     {
         base.GetDamage(damage);
 
-        if (!_dontHit)
-        {
-            _healthBar.fillAmount = _currentHealth / _maxHealth;
-        }
-
         if (_isBlocking)
         {
             _currentBlockStamina -= damage;

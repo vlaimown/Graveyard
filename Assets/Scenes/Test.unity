@@ -1645,7 +1645,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 25
   _speed: 1
-  _attackForce: 25
+  _attackForce: 15
   _healthBar: {fileID: 1178623545}
   _dontHit: 0
   _enableAttack: 1

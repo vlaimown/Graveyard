@@ -36,6 +36,8 @@ public class Character : MonoBehaviour
             {
                 _currentHealth -= damage;
             }
+
+            _healthBar.fillAmount = _currentHealth / _maxHealth;
         }
     }
 
