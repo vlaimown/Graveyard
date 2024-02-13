@@ -33,5 +33,7 @@ public class Player : Character
     public override void GetDamage(float damage)
     {
         base.GetDamage(damage);
+
+        _healthBar.fillAmount = _currentHealth / _maxHealth;
     }
 }

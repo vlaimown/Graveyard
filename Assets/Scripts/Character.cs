@@ -1,14 +1,16 @@
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Character : MonoBehaviour
 {
     [SerializeField, Min(25f)] protected float _maxHealth;
     [SerializeField, Min(1f)] protected float _speed;
     [SerializeField, Min(1f)] protected float _attackForce;
 
-    protected float _currentHealth;
+    [SerializeField] protected Image _healthBar;
 
-    [SerializeField] protected Animator _animator;
+    protected Animator _animator;
+
+    protected float _currentHealth;
     protected virtual void Start()
     {
         _currentHealth = _maxHealth;
