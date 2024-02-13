@@ -6,7 +6,7 @@ public class Player : Character
 {
     #region Attack
     [SerializeField] private bool _enableAttack = false;
-    [SerializeField, Min(5f)] private float _attackDistance = 1.0f;
+    [SerializeField, Min(3f)] private float _attackDistance = 1.0f;
     [SerializeField] private LayerMask _attackLayerMask;
     #endregion
 
@@ -39,7 +39,7 @@ public class Player : Character
     {
         if (_enableAttack && Input.GetButtonDown("Attack"))
         {
-            Attack();
+            _animator.SetTrigger("Attacking");
         }
 
         if (_enableBlock && Input.GetButton("Block") && !_blockBroken)
