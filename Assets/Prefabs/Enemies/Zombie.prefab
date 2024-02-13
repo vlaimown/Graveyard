@@ -120,7 +120,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.2
-  m_Speed: 3.5
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -131,7 +131,7 @@ NavMeshAgent:
   m_Height: 1
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 3
 --- !u!54 &4414538369422097052
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -172,10 +172,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 25
-  _speed: 1
-  _attackForce: 1
+  _speed: 2
+  _attackForce: 3
   _healthBar: {fileID: 0}
-  _agent: {fileID: 7356409839913010275}
+  _dontHit: 0
   _target: {fileID: 0}
   _attackPoint: {fileID: 2935452431690009211}
   _attackDistance: 3

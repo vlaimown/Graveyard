@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.AI;
 public class Enemy : Character
 {
-    [SerializeField] protected NavMeshAgent _agent;
     [SerializeField] protected Transform _target;
 
     [SerializeField] protected Transform _attackPoint;
@@ -10,6 +9,7 @@ public class Enemy : Character
 
     [SerializeField] protected LayerMask _attackLayer;
 
+    protected NavMeshAgent _agent;
     protected override void Start()
     {
         base.Start();
@@ -27,7 +27,7 @@ public class Enemy : Character
     {
         _agent.destination = _target.position;
 
-        transform.LookAt(_target);
+        //transform.LookAt(_target);
 
         if (Vector3.Distance(transform.position, _target.position) <= _attackDistance)
         {
